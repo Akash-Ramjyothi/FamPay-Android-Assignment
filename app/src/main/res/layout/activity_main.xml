@@ -7,12 +7,14 @@
     android:padding="16dp"
     tools:context="com.fampay.assignment.MainActivity">
 
-    <TextView
+     <TextView
         android:id="@+id/text_view_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
+
+    <include layout="@layout/item_small_card_arrow"/>
 
     <Button
         android:id="@+id/button_parse"

@@ -2,10 +2,12 @@ package com.fampay.assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -23,12 +25,16 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextViewResult;
     private RequestQueue mQueue;
+    private LinearLayout hc6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTextViewResult = findViewById(R.id.text_view_result);
         Button buttonParse = findViewById(R.id.button_parse);
+        hc6 = findViewById(R.id.hc6_layout);
+        String bgm = "#ff0000";
+        hc6.setBackgroundColor(Color.parseColor(bgm));
         mQueue = Volley.newRequestQueue(this);
         buttonParse.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,8 +58,11 @@ public class MainActivity extends AppCompatActivity {
 
                                 JSONArray cards = object.getJSONArray("cards");
                                 JSONObject title = cards.getJSONObject(0);
-                                String titlestr = title.getString("name");
-                                Log.e("titlestr",titlestr);
+                                String nm = title.getString("name");
+                                Log.e("titlestr",nm);
+                                JSONObject formatted = title.getJSONObject("formatted_title");
+                                String text = formatted.getString("text");
+                                Log.e("text",text);
 
                                 int age = object.getInt("id");
                                 String mail = object.getString("name");
