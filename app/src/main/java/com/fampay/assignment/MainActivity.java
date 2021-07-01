@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mTextViewResult = findViewById(R.id.text_view_result);
         Button buttonParse = findViewById(R.id.button_parse);
         hc6 = findViewById(R.id.hc6_layout);
-        String bgm = "#ff0000";
+        String bgm = "#000000";
         hc6.setBackgroundColor(Color.parseColor(bgm));
         mQueue = Volley.newRequestQueue(this);
         buttonParse.setOnClickListener(new View.OnClickListener() {
