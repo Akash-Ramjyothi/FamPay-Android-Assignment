@@ -28,6 +28,15 @@ https://user-images.githubusercontent.com/54114888/124322387-f6fba480-db9c-11eb-
 ## ↙️ API Used:
 https://run.mocky.io/v3/fefcfbeb-5c12-4722-94ad-b8f92caad1ad
 
+## 📝 Feedback Form:
+https://forms.gle/2gHdUkbtYS29frj18
+
+## ✍️ Code Overview: 
+https://user-images.githubusercontent.com/54114888/124332055-2a92fa80-dbae-11eb-817b-ca708ef217f0.mp4
+
+## 🚫 Difficulties Faced:
+https://user-images.githubusercontent.com/54114888/124332854-2667dc80-dbb0-11eb-8a98-62197466d5c1.mp4
+
 ## 🧪 Steps to Build locally:
 - Open Android Studio IDE.
 - Clone with `git clone https://github.com/Akash-Ramjyothi/FamPay-Android-Assignment`.
