@@ -32,150 +32,39 @@ public class MainActivity extends AppCompatActivity {
     // Specifying the API to fetch the data
     public static final String API_DATA = "https://run.mocky.io/v3/fefcfbeb-5c12-4722-94ad-b8f92caad1ad";
 
+    private TextView hc6Text;
+
     private TextView mTextViewResult;
     private RequestQueue mQueue;
-    private LinearLayout hc6;
-    private ImageView hc6_img;
-    private CardView clubforTeenagers;
+    private LinearLayout hc6Layout;
+    private ImageView hc6Img;
+    private ImageView hc9Img;
+    private ImageView hc1Img;
+    private ImageView hc5Img;
+    private ImageView hc3Img;
+
     private CardView rewards;
-    private CardView transactionsHistory;
-    private CardView store;
-    private CardView crdTransactions;
-    private CardView crdRewards;
 
-    private CardView savageRevenge;
-    private CardView towerTwist;
-    private CardView rocketMan;
-
-    private CardView grumpyGorilla;
-
-    private CardView addMoney;
-    private Button cta_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        hc6Text = findViewById(R.id.hc6Text);
+
         mTextViewResult = findViewById(R.id.text_view_result);
         Button buttonParse = findViewById(R.id.button_parse);
-        hc6 = findViewById(R.id.hc6_layout);
-        clubforTeenagers = findViewById(R.id.club_for_teenagers_item);
+        hc6Layout = findViewById(R.id.hc6_layout);
+
         rewards = findViewById(R.id.club_for_teenagers_item2);
-        transactionsHistory = findViewById(R.id.club_for_teenagers_item3);
-        store = findViewById(R.id.club_for_teenagers_item4);
-        crdTransactions = findViewById(R.id.crdTransactions);
-        crdRewards = findViewById(R.id.crdRewards);
 
-        savageRevenge = findViewById(R.id.savageRevenge);
-        towerTwist = findViewById(R.id.towerTwist);
-        rocketMan = findViewById(R.id.rocketMan);
-
-        grumpyGorilla = findViewById(R.id.grumpyGorilla);
-
-        addMoney = findViewById(R.id.addMoney);
-        cta_btn = findViewById(R.id.cta_btn);
+        hc6Img = findViewById(R.id.hc6Icon);
+        hc9Img = findViewById(R.id.clubforTeenagersImg);
+        hc1Img = findViewById(R.id.hc1Img);
 
         jsonParse();
 
-        crdTransactions.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://google.com/");
-            }
-        });
-
-        crdRewards.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://youtube.com/");
-            }
-        });
-
-        clubforTeenagers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://youtube.com/");
-            }
-        });
-
-        rewards.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://viserion.fampay.in/rewards/?fp_type\\u003dfpSurvey\\u0026fp_hide_bar\\u003dtrue\\u0026fp_bar_color\\u003d1f1f1f\\u0026tab\\u003d2\\u0026fp_ios_webview_type\\u003d2");
-            }
-        });
-
-        transactionsHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://google.com/");
-            }
-        });
-
-        store.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://");
-            }
-        });
-
-        hc6_img = findViewById(R.id.sca_iv_icon);
-        Picasso.get()
-                .load("https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/128x128/plain/shape_square.png")
-                .resize(90,90).into(hc6_img);
-
-        hc6_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://youtube.com/");
-            }
-        });
-
-        savageRevenge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://www.gamezop.com/g/ry6bwfUt_Jg?id\\u003dbM14MfArj\\u0026fp_type\\u003dfpGame");
-            }
-        });
-
-        towerTwist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://www.gamezop.com/g/HJT46GkPcy7?id\\u003dbM14MfArj\\u0026fp_type\\u003dfpGame");
-            }
-        });
-
-        rocketMan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://www.gamezop.com/g/SyXuN7W1F?id\\u003dbM14MfArj\\u0026fp_type\\u003dfpGame");
-            }
-        });
-
-        grumpyGorilla.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://www.gamezop.com/g/N1sZfO1fWqg?id\\u003dbM14MfArj\\u0026fp_type\\u003dfpGame");
-            }
-        });
-
-        addMoney.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://facebook.com/");
-            }
-        });
-
-        cta_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoUrl("https://instagram.com/");
-            }
-        });
-
-        //String bgm = "#000000";
-        //hc6.setBackgroundColor(Color.parseColor(bgm));
         mQueue = Volley.newRequestQueue(this);
         buttonParse.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,24 +96,102 @@ public class MainActivity extends AppCompatActivity {
 
                                 // Specifying w.r.t "design_type" to render views
                                 if (design_type.equals("HC1")==true){
+                                    JSONArray cards = object.getJSONArray("cards");
+                                    JSONObject title = cards.getJSONObject(i);
+                                    String hc1Title = title.getString("title");
+                                    String hc1Icon = title.getString("image_url");
+                                    String hc1Bgm = title.getString("bg_color");
+                                    String hc1Url = title.getString("url");
+                                    Picasso.get()
+                                            .load(hc1Icon)
+                                            .resize(90,90).into(hc1Img);
+                                    rewards.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            gotoUrl(hc1Url);
+                                        }
+                                    });
 
                                 }
                                 else if (design_type.equals("HC3")==true){
+                                    JSONArray cards = object.getJSONArray("cards");
+                                    JSONObject title = cards.getJSONObject(i);
+                                    String hc3Title = title.getString("title");
+                                    String hc3Icon = title.getString("image_url");
+                                    String hc3Bgm = title.getString("bg_color");
+                                    String hc3Url = title.getString("url");
+                                    Picasso.get()
+                                            .load(hc3Icon)
+                                            .resize(90,90).into(hc3Img);
+                                    rewards.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            gotoUrl(hc3Url);
+                                        }
+                                    });
 
                                 }
                                 else if (design_type.equals("HC5")==true){
+                                    JSONArray cards = object.getJSONArray("cards");
+                                    JSONObject title = cards.getJSONObject(i);
+                                    String hc5Title = title.getString("title");
+                                    String hc5Icon = title.getString("image_url");
+                                    String hc5Bgm = title.getString("bg_color");
+                                    String hc5Url = title.getString("url");
+                                    Picasso.get()
+                                            .load(hc5Icon)
+                                            .resize(90,90).into(hc5Img);
+                                    rewards.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            gotoUrl(hc5Url);
+                                        }
+                                    });
 
                                 }
                                 else if (design_type.equals("HC6")==true){
+                                    JSONArray cards = object.getJSONArray("cards");
+                                    JSONObject title = cards.getJSONObject(i);
+                                    String hc6Title = title.getString("title");
+                                    String hc6Icon = title.getString("image_url");
+                                    String hc6Bgm = title.getString("bg_color");
+                                    String hc6Url = title.getString("url");
+                                    hc6Text.setText(hc6Title);
+                                    Picasso.get()
+                                            .load(hc6Icon)
+                                            .resize(90,90).into(hc6Img);
+                                    hc6Layout.setBackgroundColor(Color.parseColor(hc6Bgm));
+                                    hc6Img.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            gotoUrl(hc6Url);
+                                        }
+                                    });
 
                                 }
                                 else if (design_type.equals("HC9")==true){
-
+                                    JSONArray cards = object.getJSONArray("cards");
+                                    JSONObject title = cards.getJSONObject(i);
+                                    String hc9Title = title.getString("title");
+                                    String hc9Icon = title.getString("image_url");
+                                    String hc9Bgm = title.getString("bg_color");
+                                    String hc9Url = title.getString("url");
+                                    Picasso.get()
+                                            .load(hc9Icon)
+                                            .resize(90,90).into(hc9Img);
+                                    rewards.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            gotoUrl(hc9Url);
+                                        }
+                                    });
                                 }
                                 else {
 
                                 }
 
+                                // Used for Testing and Debugging
+                                /*
                                 Log.e("design_type",design_type);
                                 String firstName = object.getString("name");
                                 Log.e("firstName",firstName);
@@ -239,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
                                 int age = object.getInt("id");
                                 String mail = object.getString("name");
                                 mTextViewResult.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n\n");
+                                */
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

@@ -10,7 +10,6 @@
     android:clickable="true"
     android:focusable="true"
     android:contentDescription="Register now and start UPI payments"
-    android:onClick="openUrl"
     android:layout_margin="5dp"
     app:cardCornerRadius="10dp">
 
@@ -20,15 +19,16 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:layout_margin="20dp"
+        android:onClick="hc6Url"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/sca_iv_icon"
+            android:id="@+id/hc6Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/sca_tv_title"
+            android:id="@+id/hc6Text"
             android:text="Setup your UPI ID"
             android:layout_width="0dp"
             android:layout_weight="1"
