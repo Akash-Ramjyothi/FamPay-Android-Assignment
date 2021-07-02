@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addMoney"
+                android:background="#2e5d62"
+                android:layout_width="320dp"
+                android:layout_height="350dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:isScrollContainer="true"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/clubforTeenagersImg"
+                    android:layout_width="320dp"
+                    android:layout_height="350dp"
+                    android:src="@drawable/imaging" />
+
+                <TextView
+                    android:id="@+id/bdc_tv_title"
+                    android:text="Your account looks empty!"
+                    android:textColor="@color/white"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/bdc_tv_description"
+                    android:layout_width="251dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="-40dp"
+                    android:textColor="@color/white"
+                    android:text="Add some money to your account to get started."
+                    android:textSize="18sp" />
+
+            </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/cta_btn"
+        android:text="Add"
+        android:textColor="#FFFFFF"
+        android:background="#000000"
+        android:layout_marginTop="-80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_width="128dp"
+        android:layout_height="42dp"/>
+
+</LinearLayout>
