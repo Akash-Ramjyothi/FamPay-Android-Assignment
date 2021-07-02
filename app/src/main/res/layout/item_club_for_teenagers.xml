@@ -37,7 +37,7 @@
                     android:id="@+id/clubforTeenagersImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hc9_first" />
+                    android:src="@drawable/logo_fampay" />
 
             </androidx.cardview.widget.CardView>
 
@@ -57,7 +57,7 @@
                     android:id="@+id/clubforTeenagersImg2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hc9_second" />
+                    android:src="@drawable/logo_fampay" />
 
             </androidx.cardview.widget.CardView>
 
@@ -77,7 +77,7 @@
                     android:id="@+id/clubforTeenagersImg3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hc9_third" />
+                    android:src="@drawable/logo_fampay" />
 
             </androidx.cardview.widget.CardView>
 
@@ -97,7 +97,7 @@
                     android:id="@+id/clubforTeenagersImg4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hc9_fourth" />
+                    android:src="@drawable/logo_fampay" />
 
             </androidx.cardview.widget.CardView>
 

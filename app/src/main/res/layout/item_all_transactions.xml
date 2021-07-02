@@ -45,7 +45,7 @@
 
                     <ImageView
                         android:id="@+id/hc1Img"
-                        android:src="@drawable/hc1_first"
+                        android:src="@drawable/logo_fampay"
                         android:layout_width="20dp"
                         android:layout_height="20dp" />
 
@@ -87,7 +87,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:src="@drawable/hc2_second"
+                        android:src="@drawable/logo_fampay"
                         android:layout_width="20dp"
                         android:layout_height="20dp" />
 
