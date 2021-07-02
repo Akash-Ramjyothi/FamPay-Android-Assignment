@@ -26,6 +26,7 @@ https://user-images.githubusercontent.com/54114888/124322387-f6fba480-db9c-11eb-
 - CardView version: `28.0.0` to display the Fetched data in Cards.
 
 ## ↙️ API Used to Fetch Data:
+https://run.mocky.io/v3/fefcfbeb-5c12-4722-94ad-b8f92caad1ad
 
 ## 🧪 Steps to Build locally:
 - Open Android Studio IDE.
